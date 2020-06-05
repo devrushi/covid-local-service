@@ -1,0 +1,62 @@
+<Page
+    loaded="onLoad"
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar backgroundColor="#007bba">
+        <!-- 
+        Use the NavigationButton as a side-drawer button in Android
+        because ActionItems are shown on the right side of the ActionBar
+        -->
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <!-- 
+        Use the ActionItem for IOS with position set to left. Using the
+        NavigationButton as a side-drawer button in iOS is not possible,
+        because its function is to always navigate back in the application.
+        -->
+        <ActionItem route="home/home-page"
+            android:visibility="collapsed" 
+            tap="onNavigationItemTap"
+            ios.position="left">
+             <Image width="10%" height="70%" class="nt-drawer__header-image fas t-26 " src="font://&#xf060;"  />
+        </ActionItem>
+        
+        <Label text="User Settings" fontWeight="900" fontSize="20"></Label>
+    </ActionBar>
+<GridLayout rows="auto,*" backgroundColor="#7ccdf4">
+    <GridLayout row="0" rows="auto,auto,auto,auto,auto,auto,auto" >
+        <GridLayout class="userItem" row="0" rows="*,*" columns="auto,*">
+        <Label row="0" col="0" text="Email/Username : "/>
+        <Label row="0" col="1" text="{{ email }}" textWrap="true"/>
+        </GridLayout>
+        <GridLayout class="userItem" row="1" rows="*,*" columns="auto,*">
+        <Label row="0" col="0" text="Full Name : "/>
+        <Label row="0" col="1" text="{{ name }}" textWrap="true"/>
+        </GridLayout>
+        <GridLayout class="userItem" row="2" rows="*,*" columns="auto,*">
+        <Label row="0" col="0" text="Age : "/>
+        <Label row="0" col="1" text="{{ age }}" textWrap="true"/>
+        </GridLayout>
+        <GridLayout class="userItem" row="3" rows="*,*" columns="auto,*">
+        <Label row="0" col="0" text="Gender : "/>
+        <Label row="0" col="1" text="{{ gender }}" textWrap="true"/>
+        </GridLayout>
+        <GridLayout class="userItem" row="4" rows="*,*" columns="auto,*">
+        <Label row="0" col="0" text="Mobile :"/>
+        <TextField row="0" col="1" id="mobile" color="black" text="{{mobile }}" textWrap="true"/>
+        </GridLayout>
+        <GridLayout class="userItem" row="5" rows="*,*" columns="auto,*">
+        <Label row="0" col="0" text="Location :"/>
+        <TextField row="0" col="1" id="location" color="black" text="{{location }}" textWrap="true"/>
+        </GridLayout>
+        <GridLayout class="userItem" row="6" rows="*,*" columns="auto,*">
+        <Label row="0" col="0" text="Nearest Police Station :"/>
+        <TextField row="0" col="1" color="black" id="police" hint="{{police}}" text="{{police }}" textWrap="true"/>
+        </GridLayout>
+       
+    </GridLayout>
+     <GridLayout borderRadius="30"  class="" row="1" rows="*,*" columns="*,*" backgroundColor="#bce3fa" >
+        <Button borderRadius="30"  class="btn" row="0" col="0" text="Save" tap="onSave"/>
+        <Button borderRadius="30"  class="btn" row="0" col="1" text="Logout" tap="onNavigationItemTap" route="login/login-page"/>
+    </GridLayout>
+    </GridLayout>
+</Page>

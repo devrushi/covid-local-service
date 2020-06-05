@@ -1,0 +1,61 @@
+
+<nsDrawer:RadSideDrawer id="sideDrawer" xmlns:nsDrawer="nativescript-ui-sidedrawer" loaded="onLoaded" class="ns-statusbar-transparent">
+    <nsDrawer:RadSideDrawer.drawerTransition>
+        <nsDrawer:SlideInOnTopTransition/>
+    </nsDrawer:RadSideDrawer.drawerTransition>
+
+    <nsDrawer:RadSideDrawer.drawerContent>
+        <GridLayout rows="auto, *" class="nt-drawer__content">
+            <StackLayout class="nt-drawer__header">
+                <Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;" />
+                <Label class="nt-drawer__header-brand"  text="{{ fullname }}" />
+                <Label class="nt-drawer__header-footnote" text="{{ username }}" />
+            </StackLayout>
+
+            <ScrollView row="1">
+                <StackLayout>
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Home' ? ' -selected': '') }}"
+                        route="home/home-page" title="Home" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf015;" class="nt-icon fas" />
+                        <Label row="0" col="1" text="Home" class="p-r-10" />
+                    </GridLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Service Form' ? ' -selected': '') }}"
+                        route="service-survey/service-survey-page" title="Service Form" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf1ea;" class="nt-icon far" />
+                        <Label row="0" col="1" text="Service Form" class="p-r-10" />
+                    </GridLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Dashboard' ? ' -selected': '') }}"
+                        route="dashboard/dashboard-page" title="Dashboard" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf002;" class="nt-icon fas" />
+                        <Label row="0" col="1" text="Dashboard" class="p-r-10" />
+                    </GridLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Featured' ? ' -selected': '') }}"
+                        route="featured/featured-page" title="Featured" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf005;" class="nt-icon fas" />
+                        <Label row="0" col="1" text="Featured" class="p-r-10" />
+                    </GridLayout>
+
+                    <StackLayout class="hr"></StackLayout>
+
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Settings' ? ' -selected': '') }}"
+                        route="settings/settings-page" title="Settings" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf013;" class="nt-icon fas" />
+                        <Label row="0" col="1" text="Settings" class="p-r-10" />
+                    </GridLayout>
+                    <GridLayout columns="auto, *" class="{{ 'nt-drawer__list-item' + (selectedPage === 'Logout' ? ' -selected': '') }}"
+                        route="login/login-page" title="" tap="onNavigationItemTap">
+                        <Label row="0" col="0" text="&#xf013;" class="nt-icon fas" />
+                        <Label row="0" col="1" text="Logout" class="p-r-10" />
+                    </GridLayout>
+                </StackLayout>
+            </ScrollView>
+        </GridLayout>
+    </nsDrawer:RadSideDrawer.drawerContent>
+
+    <nsDrawer:RadSideDrawer.mainContent>
+        <Frame defaultPage="login/login-page"></Frame>
+    </nsDrawer:RadSideDrawer.mainContent>
+</nsDrawer:RadSideDrawer>

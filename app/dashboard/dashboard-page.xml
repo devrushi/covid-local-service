@@ -1,0 +1,45 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+   xmlns:lv="nativescript-ui-listview">
+
+    <ActionBar backgroundColor="skyblue">
+       
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+       
+        <ActionItem 
+            tap="onNavigationItemTap"
+            android:visibility="collapsed" 
+            route="home/home-page"
+            ios.position="left">
+            <Image width="10%" height="70%" class="nt-drawer__header-image fas t-26 " src="font://&#xf060;"  />
+        </ActionItem>
+        <Label text="Services Dashboard" fontWeight="900" fontSize="20"/>
+    </ActionBar>
+<ScrollView orientation="vertical">
+    <GridLayout  backgroundColor="skyblue">
+        <StackLayout >
+             <Label text= "Needed Services" class="header"/> 
+             <lv:RadListView height="500" items="{{ serviceNeed }}" >
+             
+                    <lv:RadListView.itemTemplate>
+                    <GridLayout >
+                       <Label class="login-label"  text="{{$value}}" textWrap="true" />
+                    </GridLayout>    
+                    </lv:RadListView.itemTemplate>
+                   </lv:RadListView>
+        </StackLayout>  
+        <!-- <StackLayout row="1" >
+             <Label text= "Available Services" class="header"/> 
+             <lv:RadListView height="300" items="{{ serviceAvailList }}" >
+             
+                    <lv:RadListView.itemTemplate>
+                    <GridLayout >
+                       <Label class="login-label"  text="{{$value}}"/>
+                    </GridLayout>    
+                    </lv:RadListView.itemTemplate>
+                   </lv:RadListView>
+        </StackLayout>   -->
+
+    </GridLayout>
+    </ScrollView>
+</Page>

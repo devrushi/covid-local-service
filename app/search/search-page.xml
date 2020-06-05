@@ -1,0 +1,44 @@
+<Page xmlns:lv="nativescript-ui-listview"  navigatingTo="onNavigatingTo" loaded="pageLoaded">
+<ActionBar backgroundColor="skyblue">
+       
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+       
+        <ActionItem route="home/home-page" 
+            android:visibility="collapsed" 
+            tap="onNavigationItemTap"
+            ios.position="left">
+            <Image width="10%" height="70%" class="nt-drawer__header-image fas t-26 " src="font://&#xf060;"  />
+        </ActionItem>
+        <Label text=" Search Covid Information" fontWeight="900" fontSize="20"/>
+    </ActionBar>
+<GridLayout rows="auto,*,*" backgroundColor="#7ccdf4">
+ <GridLayout row="0" rows="auto, auto, auto">
+                
+                <StackLayout row="0" class="input-field">
+                    <TextField class="input" id="state"  hint="State"
+                        keyboardType="email" autocorrect="true"
+                        autocapitalizationType="none" returnKeyType="next" />
+                    <Label class="hr-light" />
+                </StackLayout>
+                <StackLayout row="1" class="input-field">
+                    <TextField class="input" id="district"  hint="District"
+                        keyboardType="email" autocorrect="true"
+                        autocapitalizationType="none" returnKeyType="done" />
+                    <Label class="hr-light" />
+                </StackLayout>
+
+<Button row="2" tap="onSearch" class="btn" text="Search"/>
+</GridLayout>
+ <GridLayout row="1" rows="*,50,50,50,50,50,*" columns="10,*,10" backgroundColor="#7ccdf4">
+            
+           
+                <Label class="homeItem"  text="{{ 'State : '+statename }}" row="1" col="1" textAlignment="center" textWrap="true" />
+                <Label class="homeItem" text="{{ 'State confirmed cases : '+confirmedStatepeople  }}" row="2" col="1" textAlignment="center" textWrap="true" />
+                <Label class="homeItem" text="{{ 'District : '+districtname }}" row="3" col="1" textAlignment="center" textWrap="true" />
+                <Label class="homeItem" text="{{ 'District confirmed cases : '+confirmedDistrictpeople  }}" row="4" col="1" textAlignment="center" textWrap="true"/>
+                <Label class="homeItem" text="{{ 'District Zone : '+zone }}" backgroundColor="{{zone}}" row="5" col="1" textAlignment="center" />
+            
+            
+    </GridLayout>
+</GridLayout>
+</Page>

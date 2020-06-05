@@ -1,0 +1,71 @@
+<Page navigatingTo="onNavigatingTo"  xmlns:lv="nativescript-ui-listview">
+    <ActionBar backgroundColor="#007bba" rows="auto, *"> 
+        
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+    <!-- <StackLayout orientation="horizontal"
+    ios:horizontalAlignment="center"
+    android:horizontalAlignment="left">
+    <Image src="" class="action-image"></Image>
+    <Label text="ativeScript" class="action-label"></Label>
+  </StackLayout> -->
+        <ActionItem tap="onNavigationItemTap"
+            android:visibility="collapsed" 
+            route="settings/settings-page"
+            ios.position="left">
+
+            <Image width="10%" height="10%" class="nt-drawer__header-image fas t-36 " src="font://&#xf007;"  />
+        </ActionItem>
+        <Label  text="Home" fontWeight="900" fontSize="20" > </Label>
+         <ActionItem tap="onNavigationItemTap"
+         route="search/search-page"
+            android:visibility="collapsed" 
+            ios.position="right" >
+            <Image width="10%" height="70%" class="nt-drawer__header-image fas t-26 " src="font://&#xf689;"  />
+        </ActionItem>
+        
+        
+    </ActionBar>
+<GridLayout rows="auto,*,*" backgroundColor="#7ccdf4">
+    
+    <GridLayout row="1" rows="*,50,50,50,50,50,*" columns="10,*,10" backgroundColor="#7ccdf4">
+            
+           
+                <Label class="homeItem"  text="{{ statename }}" row="1" col="1" textAlignment="center" textWrap="true" />
+                <Label class="homeItem" text="{{ confirmedStatepeople  }}" row="2" col="1" textAlignment="center" textWrap="true" />
+                <Label class="homeItem" text="{{ districtname }}" row="3" col="1" textAlignment="center" textWrap="true" />
+                <Label class="homeItem" text="{{ confirmedDistrictpeople  }}" row="4" col="1" textAlignment="center" textWrap="true"/>
+                <Label class="homeItem" text="{{ 'District Zone : '+zone }}" backgroundColor="{{zone}}" row="5" col="1" textAlignment="center" />
+            
+            
+    </GridLayout>
+     <GridLayout borderRadius="30" row="2" backgroundColor="#bce3fa" >
+            
+           <GridLayout rows="*,150,150,*" columns="*,150,150,*" >
+           <GridLayout rows="*,auto,auto,*"  row="1" col="1" class="homeShortcutItem"  route="service-survey/service-survey-page" title="Service Form" tap="onNavigationItemTap">
+                        <Label row="1"  text="&#xf1ea;" textAlignment="center" class="nt-icon far" textWrap="true"/>
+                        <Label row="2"  text=" Request Essentials"  textAlignment="center" textWrap="true" />
+                    </GridLayout>
+                
+                 <GridLayout rows="*,auto,auto,*" row="1" col="2" class="homeShortcutItem" route="dashboard/dashboard-page" title="Dashboard" tap="onNavigationItemTap">
+                        <Label row="1" text="&#xf002;" textAlignment="center" class="nt-icon fas" />
+                        <Label row="2" text=" Track Request"  textAlignment="center" textWrap="true" />
+                    </GridLayout>
+                
+                   <GridLayout rows="*,auto,auto,*" row="2" col="1" class="homeShortcutItem" route="featured/featured-page" title="Local Services" tap="onNavigationItemTap">
+                        <Label row="1"  text="&#xf3c5;" textAlignment="center" class="nt-icon fas" />
+                        <Label row="2"  text=" Local Services"  textAlignment="center" textWrap="true" />
+                    </GridLayout>
+
+                    <GridLayout rows="*,auto,auto,*" row="2" col="2" class="homeShortcutItem" route="featured/featured-page" title="Local Services" tap="onNavigationItemTap">
+                        <Label row="1" text="&#xf07a;" class="nt-icon far" textAlignment="center"/>
+                        <Label row="2" text=" Other Services "  textAlignment="center" textWrap="true" />
+                    </GridLayout>
+                
+                
+           </GridLayout>    
+            
+            
+    </GridLayout>
+    </GridLayout>
+</Page>
+

@@ -1,0 +1,82 @@
+<Page navigatingTo="onNavigatingTo" class="page" actionBarHidden="true" xmlns:lv="nativescript-ui-listview"> 
+     <ActionBar>
+     <Label text="SignIn"></Label>  
+     </ActionBar>
+     <FlexboxLayout class="page" backgroundColor="#2c4268">
+     <ScrollView row="0">
+         <StackLayout class="form" > 
+        <Label class="header" visibility="{{ isLoggingIn ? 'visible' : 'collapse' }}" textWrap="true" text="Hindustan Application for Essential Services during Lockdown
+Period"/>
+            <GridLayout rows="auto, auto, auto, auto, auto, auto, auto, auto">
+                
+                <StackLayout row="0" class="input-field">
+                    <TextField class="input" text="{{ email }}" hint="Email"
+                        keyboardType="email" autocorrect="false"
+                        autocapitalizationType="none" returnKeyType="next" />
+                    <Label class="hr-light" />
+                </StackLayout>
+
+                <StackLayout row="1" class="input-field">
+                    <TextField id="password" class="input" text="{{ password }}"
+                        hint="Password" secure="true" returnKeyType="{{ isLoggingIn ? 'done' : 'next' }}" />
+                    <Label class="hr-light" />
+                </StackLayout>
+
+                <StackLayout row="2" class="input-field" visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}">
+                    <TextField id="confirmPassword" class="input" text="{{ confirmPassword }}"
+                        hint="Confirm password" secure="true" returnKeyType="next" />
+                    <Label class="hr-light" />
+                </StackLayout>
+                <StackLayout row="3" class="input-field" visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}">
+                    <TextField id="fullname" class="input" text="{{ fullname }}"
+                        hint="Enter full name"  returnKeyType="next" />
+                    <Label class="hr-light" />
+                </StackLayout>
+                <StackLayout row="4" class="input-field" visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}">
+                    <TextField id="age" class="input" text="{{ age }}"
+                        hint="Enter age"  keyboardType="datetime" returnKeyType="next" />
+                     <TextField id="gender" class="input" text="{{ gender.name }}"
+                        hint="Male/Female/Other"   returnKeyType="next" />
+                         <!-- <lv:RadListView items="{{gender}}" selectionBehavior="Press" itemSelected="onSelect" multipleSelection="false">
+                            <lv:RadListView.itemTemplate>
+                            <Label class="input" text="{{ $value }}"   />
+                            </lv:RadListView.itemTemplate>
+                        </lv:RadListView>  -->
+                        <!-- <ListPicker items="{{ gender }}" selectedIndex="{{ index }}" loaded="onListPickerLoaded" class="p-15 picker" row="1"/> -->
+                    <Label class="hr-light" />
+                </StackLayout>
+                <StackLayout row="5" class="input-field" visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}">
+                    <TextField id="mobile" class="input" text="{{ mobile }}"
+                        hint="Enter mobile number"  keyboardType="phone" returnKeyType="next" />
+                    <Label class="hr-light" />
+                </StackLayout>
+                 <StackLayout row="6" class="input-field" visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}">
+                    
+                    <TextField id="currentLocation" class="input" text="{{ currentLocation }}"
+                        hint="Loading Location.." editable="false" returnKeyType="next" />
+                </StackLayout>
+                <StackLayout row="7" class="input-field" visibility="{{ !isLoggingIn ? 'visible' : 'collapse' }}">
+                    
+                    <TextField id="nearestPoliceStation" class="input" text="{{ nearestPoliceStation }}"
+                        hint="Nearest Police Station"  returnKeyType="done" />
+                </StackLayout>
+
+
+                <ActivityIndicator rowSpan="4" busy="{{ processing }}"></ActivityIndicator>
+            </GridLayout>
+
+            <Button text="{{ isLoggingIn ? 'Log In' : 'Sign Up' }}" tap="{{ submit }}" isEnabled="{{ !processing }}"
+                class="btn btn-primary m-t-20" />
+            <Label visibility="{{ isLoggingIn ? 'visible' : 'collapse' }}"
+                text="Forgot your password?" class="login-label" tap="{{ forgotPassword }}" />-->
+        </StackLayout>
+    </ScrollView>
+        <Label row="1" class="login-label sign-up-label" tap="{{ toggleForm }}">
+            <FormattedString>
+                <Span text="{{ isLoggingIn ? 'Don’t have an account? ' : 'Back to Login' }}" />
+                <Span text="{{ isLoggingIn ? 'Sign up' : '' }}" class="bold" />
+            </FormattedString>
+        </Label>
+        
+    </FlexboxLayout>
+</Page> 

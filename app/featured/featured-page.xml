@@ -1,0 +1,42 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+   xmlns:lv="nativescript-ui-listview">
+
+    <ActionBar backgroundColor="skyblue">
+     
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+        <ActionItem 
+             route="home/home-page" 
+            android:visibility="collapsed" 
+            tap="onNavigationItemTap"
+            ios.position="left">
+            <Image width="10%" height="70%" class="nt-drawer__header-image fas t-26 " src="font://&#xf060;"  />
+        </ActionItem>
+        <Label text="Local Featured Page" fontWeight="900" fontSize="20"></Label>
+    </ActionBar>
+
+    <GridLayout backgroundColor="skyblue">
+    <StackLayout>
+    <Label text="Local Resources " class="header"/>
+     <!-- <Repeater   items="{{ org  }}" >
+     <Repeater.itemTemplate>   
+        <Label class="orgItem" text=" {{ 'Category  : '+category+' \n Name of the Organisation : '+ nameoftheorganisation +' \n Weblink : '+ contact +' \n Contact : '+ phonenumber  }} " textWrap="true"  tap="submitRequest"  margin="10" />
+    </Repeater.itemTemplate>
+     </Repeater> -->
+ <lv:RadListView height="600" items="{{ org }}" >
+             
+                    <lv:RadListView.itemTemplate>
+                    <GridLayout class="orgItem" rows="*,auto" margin="10">
+                       <Label row="0" class="login-label" id="orgDetail"  text="{{'Category  : '+category+' \n Name of the Organisation : '+ nameoftheorganisation +' \n Weblink : '+ contact  }}" tap="submitRequest"  textWrap="true" />
+                       <Label class="callBtn" row="1" text="{{ 'Call : '+phonenumber }}" tap="onCall" />
+                    </GridLayout>  
+                   
+                    </lv:RadListView.itemTemplate>
+                   </lv:RadListView>    
+     
+     
+ 
+     
+    </StackLayout>
+    </GridLayout>
+</Page>

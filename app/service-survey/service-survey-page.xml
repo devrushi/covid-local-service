@@ -1,0 +1,88 @@
+<Page loaded="pageLoaded" navigatingTo="onNavigatingTo"  class="page"  xmlns:lv="nativescript-ui-listview"> 
+<ActionBar backgroundColor="skyblue">
+       
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" tap="onDrawerButtonTap"></NavigationButton>
+       
+        <ActionItem route="home/home-page" 
+            android:visibility="collapsed" 
+            tap="onNavigationItemTap"
+            ios.position="left">
+            <Image width="10%" height="70%" class="nt-drawer__header-image fas t-26 " src="font://&#xf060;"  />
+        </ActionItem>
+        <Label text=" Essential Services Form" fontWeight="900" fontSize="20"/>
+    </ActionBar>
+    <ScrollView orientation="vertical">>  
+<StackLayout  class="form" backgroundColor="skyblue"> 
+ 
+     <FlexboxLayout class="page" >
+         
+             <GridLayout rows="auto, *, *, *">
+      
+             <StackLayout row="0" class="input-field" visibility="visible">
+                 <Label class="header" text="Food"/>
+                
+                 <lv:RadListView  height="300" items="{{ food }}"  > 
+                    <lv:RadListView.itemTemplate>
+                    <GridLayout  class=""  columns="*, auto" class="add-bar">
+                       <Label class="serviceItem" col="0" text="{{ name }}" textAlignment="center"  />
+                       <Label class="btn serviceItem" id="addBtn" text="Add" col="1" tap="addItem" />
+                    </GridLayout>     
+                    </lv:RadListView.itemTemplate>
+                   </lv:RadListView>
+                   
+
+                <Label class="hr-light" />
+                 
+            </StackLayout> 
+            <StackLayout row="1"  class="input-field" visibility="visible">
+                <Label class="header" text="Essential Home Products"/>
+                 <lv:RadListView height="300" items="{{ home }}"  > 
+                    <lv:RadListView.itemTemplate>
+                    <GridLayout  columns="*, auto" class="add-bar">
+                       <Label class="serviceItem" col="0" text="{{ name }}" textAlignment="center" />
+                       <Label class="btn serviceItem" id="addBtn" text="Add" col="1" tap="addItem"/>
+                    </GridLayout>    
+                    </lv:RadListView.itemTemplate>
+                   </lv:RadListView>
+                   
+
+             </StackLayout>   
+            <StackLayout row="2"  class="input-field" visibility="visible">
+                 <Label class="header" text="Medicine and Medical Services" textWrap="true"/>
+                  <lv:RadListView  height="300" items="{{ medicalServices }}"  > 
+                    <lv:RadListView.itemTemplate>
+                    <GridLayout  columns="*, auto" class="add-bar">
+                       <Label class="serviceItem" col="0" text="{{ name }}" textAlignment="center" />
+                       <Label class="btn serviceItem" id="addBtn" text="Add" col="1" tap="addItem"/>
+                    </GridLayout>    
+                    </lv:RadListView.itemTemplate>
+                   </lv:RadListView>
+                   
+
+                <Label class="hr-light" />
+            </StackLayout>
+            <StackLayout row="3"  class="input-field" visibility="visible">
+                 <Label class="header" text="Other Essential Services"/>
+                 <lv:RadListView height="300" items="{{ OtherEssential }}"  > 
+                    <lv:RadListView.itemTemplate>
+                    <GridLayout  columns="*, auto" class="add-bar">
+                       <Label class="serviceItem" col="0" text="{{ name }}" textAlignment="center" />
+                       <Label class="btn serviceItem" id="addBtn" text="Add" col="1" tap="addItem"/>
+                    </GridLayout>    
+                    </lv:RadListView.itemTemplate>
+                   </lv:RadListView>
+                   
+
+                <Label class="hr-light" />
+            
+            </StackLayout>
+             
+              
+            </GridLayout>
+             <!-- <Button class="btn" text="Submit" tap="saveData"/> -->
+ 
+    </FlexboxLayout>
+    
+    </StackLayout>
+    </ScrollView>
+</Page> 
