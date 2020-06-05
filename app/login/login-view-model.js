@@ -35,7 +35,7 @@ function LoginViewModel() {
                     timeout: 20000 })
                 .then(loc => {
                     
-                    fetch("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + loc.latitude + "," + loc.longitude + "&key=AIzaSyBWnTnr4C8kQ1NFa2ckU4pUrc9QAt7H2z0")
+                    fetch("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + loc.latitude + "," + loc.longitude + "&key=<USER KEY>")
                     .then(response => response.json())
                      .then(res => {
                         this.set("processing", false);
