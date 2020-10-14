@@ -46,7 +46,8 @@ Navigation : There is only one option to navigate from this page i.e click on th
 * Name : Request essentials: A request form for the essential items.
   
 Details : Request essentials page of the mobile app.The page displays the list of six sections and each section has a list  essential items. The user needs to click on the Add button to add to select the needed essential service.
-Navigation : There is only one option to navigate from this page i.e click on the arrow to go back top home page 
+Navigation : There is only one option to navigate from this page i.e click on the arrow to go back top home page
+
 ![Essential service list](/ServiceList.png)
 
 ![Screen Alert after Item selection](/ServiceListSelection.png)
